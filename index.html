@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNL_Parallax Scrolling Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Jungle</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <h2 id="text"><span>It's a time for new</span><br>Adventure</h2>
+        <img src="./USED_IMG/R_Bird.png" id="R_Bird" style="z-index:3" alt="">
+        <img src="./USED_IMG/L_Bird.png" id="L_Bird" style="z-index:3" alt="">
+        <img src="./USED_IMG/F_Tree.png" id="FTree" alt="" style="z-index: 2;">
+        <img src="./USED_IMG/B_Tree.png" id="BTree" alt="" style="z-index: 1;">
+        <a href="#" id="btn" style="z-index:3">Explore</a>
+        <img src="./USED_IMG/Rocks.png" id="Rocks" style="z-index: 3;" alt="">
+        <img src="./USED_IMG/Water.png" id="Water" style="z-index: 4;" alt="">
+    </section>
+    <div class="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>In a parallax scrolling effect, both the foreground and background are moving, but the background typically
+            moves much more slowly, giving the illusion of depth. Done correctly, parallax scrolling produces a
+            fascinating and seamless virtual experience.
+
+            If you want to add a parallax scrolling effect to your website, you should consider the following tips.
+
+            Use it selectively. Parallax scrolling is much more powerful when you use it on one particular element as
+            opposed to all pages and all the time. Use it in headers and titles, or maybe on your home page only. You
+            want parallax scrolling to strengthen your website’s design, not distract users.
+            Image compression is key. Parallax scrolling uses a variety of media files and CSS shapes to create a sense
+            of depth. You don’t want to compromise your web performance and user experience with large image files that
+            load too slowly.
+            Play with color. Parallax scrolling isn’t just about the images in the foreground and background, but about
+            color, too. You might use more desaturated tones in the background and more lively colors in the foreground
+            to create an even greater sense of depth.
+            Though there are several approaches to achieving a parallax scrolling effect, making the background move
+            slower than the foreground is the most popular.
+            A slower moving background embodies the same type of feeling as when you are inside a moving vehicle looking
+            out: the sky and clouds in the background appear to move at a slower pace than the trees and houses in the
+            foreground. Let’s take a look at this effect in play.</p>
+
+        <span>
+            <h2>How to Get The Best Out of Parallax Scrolling</h2>
+        </span>
+        <p>Now that you have an idea of how to write a parallax scrolling script with CSS, you can start
+            experimenting
+            with all the design possibilities on your website. Ideally, you'll experiment on a staging site before
+            pushing this code to your live website.
+            When thinking about how to design your website to take full advantage of parallax scrolling, don't
+            forget to
+            tell a story, make it engaging, and include a call-to-action.
+            Also, don't just use it for the sake of using it! Parallax scrolling is an awesome tool to boost
+            engagement,
+            but it must be used tactfully for optimal impact.</p>
+
+
+    </div>
+    <script>
+        let text = document.getElementById("text");
+        let R_Bird = document.getElementById("R_Bird");
+        let L_Bird = document.getElementById("L_Bird");
+        let btn = document.getElementById("btn");
+        let Rocks = document.getElementById("Rocks");
+        let FTree = document.getElementById("FTree");
+        let BTree = document.getElementById("BTree");
+        let header = document.getElementById("header");
+
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY
+
+            text.style.top = 36.5 + value * -0.1 + '%';
+            R_Bird.style.top = value * -0.4 + 'px';
+            R_Bird.style.left = value * 3 + 'px'
+            L_Bird.style.top = value * -2.5 + 'px';
+            L_Bird.style.left = value * -6 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            Rocks.style.top = value * -0.04 + 'px';
+            FTree.style.top = value * 0.25 + 'px';
+            BTree.style.top = value * 0.50 + 'px';
+            header.style.top == value * 0.5 + 'px';
+
+        })
+    </script>
+</body>
+
+</html>
